@@ -32,13 +32,13 @@ strictPropertyInitialization: false
 
 we can create table by using entities in type orm
 
-# ADD db configurations in Appdatasource in main index.ts file.
+# ADD db configurations in Appdatasource in Datasouce
 
 Details~ `port,localhost,username,password,`
 Entities- `created table configuration`
 synchronise-`whenever updated db will be changed`
 
-# initialize Appdatasource
+# initialize Appdatasource in inndex.ts
 
 # To run db using typeorm
 

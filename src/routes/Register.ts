@@ -1,9 +1,8 @@
 const express = require("express");
 import { AppDataSource } from "../Datasource/datasource";
-import { Request, response, Response } from "express";
+import { Request, Response } from "express";
 import { Authentication } from "../entities/Authentication/auth";
 import { Profile } from "../entities/Profile/profile";
-import { QueryFailedError } from "typeorm";
 const registerRouter = express.Router();
 
 registerRouter.use(express.json());
