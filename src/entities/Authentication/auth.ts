@@ -1,4 +1,5 @@
-import { Entity, BaseEntity, Column,PrimaryGeneratedColumn } from "typeorm";
+import { Entity, BaseEntity, Column,PrimaryGeneratedColumn, CreateDateColumn,OneToOne,JoinColumn} from "typeorm";
+import { Profile } from "../Profile/profile";
 
 @Entity("Authentication")
 export class Authentication extends BaseEntity {
@@ -12,9 +13,15 @@ export class Authentication extends BaseEntity {
     @Column()
     password: string
 
-    @Column()
+    @Column({default:true})
     Active: boolean
 
-    @Column()
-    Createddate:Date
+    @CreateDateColumn()
+    Createddate:Date;
+
+    @OneToOne (()=>Profile)
+    @JoinColumn({
+    name:"profileid",
+})
+    profileid:Profile
 }
