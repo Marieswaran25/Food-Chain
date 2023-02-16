@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 import { Authentication } from "../entities/Authentication/auth";
 import { Profile } from "../entities/Profile/profile";
 const registerRouter = express.Router();
-
 registerRouter.use(express.json());
 registerRouter
   .route("/")
@@ -29,13 +28,17 @@ registerRouter
         auth.email = Email;
         auth.password = password;
         auth.profileid = profinserted;
-
+        
         const userinserted = await authRepo.save(auth);
+
         return Response.json(userinserted);
-      } else {
+      } 
+      else 
+      {
         return Response.status(400).send("User already found");
       }
-    } catch (error: any) {
+    } catch (error: any) 
+    {
       return Response.status(400).send(`${error.column} is missing`);
     }
   });
