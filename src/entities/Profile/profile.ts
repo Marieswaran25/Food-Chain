@@ -1,5 +1,4 @@
-import {Entity,BaseEntity,Column,PrimaryGeneratedColumn, OneToOne, JoinColumn} from 'typeorm'
-import { Authentication } from '../Authentication/auth';
+import {Entity,BaseEntity,Column,PrimaryGeneratedColumn} from 'typeorm'
 
 @Entity("Profile")
 export class Profile extends BaseEntity{
