@@ -1,7 +1,8 @@
 const express = require("express");
-import {createHotel} from '../controller/HotelController'
+import {createHotel,getAllhotels} from '../controller/HotelController'
 const hotelRouter=express.Router();
 hotelRouter.use(express.json());
 hotelRouter.post('/',createHotel)
+hotelRouter.get('/',getAllhotels)
 module.exports=hotelRouter
 
