@@ -30,7 +30,8 @@ export const getAllhotels=async(request:Request,response:Response)=>{
 try {
     const data=await hotelRepo.manager.find(Hotels);
     return response.status(200).send(data);
-} catch (error) {
-    return response.status(400);
+} 
+catch (error:any) {
+    return response.status(400).send(error.message);
 }
 }
