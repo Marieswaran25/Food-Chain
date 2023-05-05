@@ -6,6 +6,8 @@ const cors=require('cors')
 const registerRoute=require('./routes/Register')
 const LoginRouter=require('./routes/Login')
 const HotelRouter=require('./routes/hotel')
+const foodsRouter=require('./routes/food')
+
 
 app.use(cors())
 app.use(express.json())
@@ -15,6 +17,7 @@ AppDataSource.initialize()
     app.use('/signin',registerRoute)
     app.use('/login',LoginRouter)
     app.use('/hotel',HotelRouter)
+    app.use('/foods',foodsRouter)
     app.listen(port,()=>{
         console.log(`Express app running at ${port}`)
     })
@@ -22,3 +25,5 @@ AppDataSource.initialize()
 .catch((err)=>{
     console.log('Datasource is not initialized',err)
 })
+
+

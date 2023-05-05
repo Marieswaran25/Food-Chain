@@ -1,5 +1,6 @@
 import {DataSource} from 'typeorm';
 import {Authentication} from '../entities/Authentication/auth'
+import { Foods } from '../entities/Food/food';
 import { Hotels } from '../entities/Hotels/hotel';
 import { Profile } from '../entities/Profile/profile';
 
@@ -10,6 +11,6 @@ export const AppDataSource = new DataSource({
     username: "postgres",
     password: "Venkat@2501",
     database: "exome",
-    entities:[Authentication,Profile,Hotels],
+    entities:[Authentication,Profile,Hotels,Foods],
     synchronize:true
 });
