@@ -7,9 +7,13 @@ const registerRoute=require('./routes/Register')
 const LoginRouter=require('./routes/Login')
 const HotelRouter=require('./routes/hotel')
 const foodsRouter=require('./routes/food')
+const otpRouter=require('./routes/otp')
+require('dotenv').config()
 
 
-app.use(cors())
+
+app.use(cors());
+
 app.use(express.json())
 AppDataSource.initialize()
 .then(()=>{
@@ -18,6 +22,7 @@ AppDataSource.initialize()
     app.use('/login',LoginRouter)
     app.use('/hotel',HotelRouter)
     app.use('/foods',foodsRouter)
+    app.use('/otp',otpRouter)
     app.listen(port,()=>{
         console.log(`Express app running at ${port}`)
     })

@@ -16,4 +16,7 @@ export class Hotels extends BaseEntity{
     
     @Column()
     mobile:string;
+
+    @Column()
+    ratings:Number
 }
