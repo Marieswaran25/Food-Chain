@@ -19,4 +19,7 @@ export class Hotels extends BaseEntity{
 
     @Column()
     ratings:Number
+
+    @Column()
+    type:string
 }

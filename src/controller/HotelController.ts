@@ -6,7 +6,7 @@ import { Request, Response } from "express";
 export const hotelRepo = AppDataSource.getRepository(Hotels);
  
 export const createHotel=async(request:Request,response:Response)=>{
-    const {hotelname,address,mobile,ratings}:any=request.body
+    const {hotelname,address,mobile,ratings,type}:any=request.body
     try {
         const existhotel=await hotelRepo.findOneBy({hotelname:hotelname})
         if(!existhotel){
@@ -14,7 +14,8 @@ export const createHotel=async(request:Request,response:Response)=>{
                 hotelname:hotelname,
                 address:address,
                 mobile:mobile,
-                ratings:ratings
+                ratings:ratings,
+                type:type
             })
             await hotelinserted.save();
             return response.status(201).send(hotelinserted);

@@ -20,7 +20,7 @@ AppDataSource.initialize()
     console.log('Datasource is initialized')
     app.use('/signin',registerRoute)
     app.use('/login',LoginRouter)
-    app.use('/hotel',HotelRouter)
+    app.use('/hotels',HotelRouter)
     app.use('/foods',foodsRouter)
     app.use('/otp',otpRouter)
     app.listen(port,()=>{
